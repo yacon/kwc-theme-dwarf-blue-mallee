@@ -1,0 +1,53 @@
+@import "compass/utilities/general/clearfix";
+@import "kwf/background-image-dpr2";
+@import "compass/css3/box-sizing";
+@import "compass/css3/transition";
+
+.cssClass {
+    @include pie-clearfix;
+    margin-bottom: 50px;
+    position: relative;
+
+    .innerButton {
+        @include pie-clearfix;
+
+        a {
+            background-color: blue;
+            line-height: 40px;
+            font-size: 15px;
+            max-width: 100%;
+            height: 40px;
+            color: white;
+
+            span {
+                word-wrap: normal;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    &.colorGrey {
+        a {
+            background-color: #555;
+
+            &:hover {
+                background-color: #444;
+            }
+        }
+    }
+
+    &.positionLeft {
+        text-align: left;
+    }
+
+    &.positionRight {
+        text-align: right;
+
+        .innerButton a {
+            float: right;
+        }
+    }
+    &.positionCenter {
+        text-align: center;
+    }
+}

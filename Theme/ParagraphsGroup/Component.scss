@@ -1,0 +1,113 @@
+@import "compass/css3/opacity";
+
+.cssClass {
+    position: relative;
+    margin: 0 auto;
+
+    &.bgGrey {
+        padding: 30px 0px 10px 0px;
+
+        .background {
+            background: #ececec;
+        }
+    }
+
+    &.bgBlack {
+        &.webStandard {
+            color: white;
+
+            p, li, h1, h2, h3, h4, label {
+                color: white;
+            }
+        }
+        .background {
+            background: #161616;
+        }
+    }
+
+    &.bgImage {
+        padding: 30px 0px 10px 0px;
+    }
+
+    &.aligncenter {
+        p, li, h1, h2, h3, h4, label {
+            text-align: center;
+        }
+    }
+
+    &.alignright {
+        p, li, h1, h2, h3, h4, label {
+            text-align: right;
+        }
+    }
+
+    &.standardWidth {
+        &.bgGrey {
+            padding: 30px 30px 10px 30px;
+        }
+    }
+
+    .innerGroup {
+        max-width: 800px;
+        position: relative;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+    .background {
+        position: absolute;
+        overflow: hidden;
+        height: 100%;
+        top: 0;
+    }
+
+    &.gt600 {
+        &.width90 {
+            .innerGroup {
+                max-width: 90%;
+            }
+        }
+        &.width80 {
+            .innerGroup {
+                max-width: 80%;
+            }
+        }
+        &.width70 {
+            .innerGroup {
+                max-width: 70%;
+            }
+        }
+        &.width60 {
+            .innerGroup {
+                max-width: 60%;
+            }
+        }
+        &.width50 {
+            .innerGroup {
+                max-width: 50%;
+            }
+        }
+
+        &.width90 {
+            .innerGroup {
+                max-width: 90%;
+            }
+        }
+
+        @for $i from 1 through 10 {
+            $j : $i / 10;
+            &.opacity#{$i}0 {
+                .background {
+                    .paragraphsGroupImage {
+                        @include opacity($j);
+
+                        img {
+                            @include opacity($j);
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
